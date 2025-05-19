@@ -1,5 +1,6 @@
 const express = require('express');
-      require('dotenv').config();
+      // require('dotenv').config();
+require('dotenv').config();
 
 const {MongoClient,ServerApiVersion, ObjectId} = require('mongodb');
 const cors = require('cors');
@@ -7,7 +8,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const uri = process.env.MONGODB_URI;
 // middlewire
-app.use(cors());
+app.use(cors({
+  origin: 'https://test-fontend-app.netlify.app'
+}));
 app.use(express.json());
 
 //user: crudtester  pss : csOzBn8fqCvsGL7T
